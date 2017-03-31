@@ -12,8 +12,9 @@ $scope.sleepData.date = new Date();
 
  $scope.postSleepData = function (sleepData) {
 
-  SleepDataFactory.postSleepData(sleepData) .then ((sleepData) =>{
-
+  SleepDataFactory.postSleepData(sleepData)
+  .then ((sleepData) =>{
+      console.log(sleepData);
 
   $location.url("/getData");
   });
