@@ -1,0 +1,120 @@
+<!-- PARTIAL -->
+<h2 class=" bg-info text-center">Good Morning</h2>
+
+
+<!-- MAIN INPUT FORM MORNING-->
+ <form class="form">
+
+  <!-- Date -->
+    <label> Date:
+    <input class="bg-info form-control" id="theDate" data-toggle="dropdown" type="date" name="day" ng-model="sleepData.date">
+    </label>
+    <br>
+
+
+  <img class="rounded-corners-2" src="http://i1.kym-cdn.com/photos/images/original/001/221/588/f9e.gif">
+  <br>
+    <!-- Bedtime -->
+
+    <label> I went to bed last night at:
+      <input class="form-check-input form-control" type="time" name="bedtime" ng-model=sleepData.bedtime>
+    </label>
+    <!-- Waketime -->
+    <br>
+    <label> I got out of bed this morning at:
+      <input class="form-check-input form-control" type="time" name="waketime" ng-model=sleepData.waketime>
+    </label>
+    <br>
+    <!-- Ease of Sleep -->
+    <label> Ease of Falling Asleep
+    <select class="form-control" ng-model=sleepData.easeOfSleep>
+        <option value="easily">Easily</option>
+        <option value="after some time">After some time</option>
+        <option value="with difficulty">With difficulty</option>
+    </select>
+    <br>
+
+    <!-- NOCTURNAL AWAKENINGS -->
+    <label>Times Awoken
+      <select class='some_selector' ng-model=sleepData.timesAwoken>
+      </select>​
+    </label>
+
+  <!-- Minutes awake -->
+   <label>Minutes Awake
+  <select class='some_selector' ng-model=sleepData.minutesAwake>
+
+  </select>​
+  </label>
+
+   <!-- Total Sleep Hours -->
+  <label>Last night I slept a total of:
+    <select class="some_selector" step="0.25"></select ng-model=sleepData.totalSleepHours> hours
+  </label>
+
+<!-- My sleep was disturbed by -->
+  <label>
+    My sleep was disturbed by:
+    <textarea ng-model=sleepData.disturbedNotes></textarea>
+  </label>
+
+  <br>
+
+
+<span class="label label-default">When I woke up for the day, I felt:
+    <select class="form-control" ng-model=sleepData.subjectiveRatingWaking>
+        <option value="refreshed">Refreshed</option>
+        <option value="somewhat-refreshed">Somewhat refreshed</option>
+        <option value="fatigued">Fatigued</option>
+    </select>
+</span>
+
+<label>
+    Notes:
+    <textarea ng-model=sleepData.notes></textarea>
+  </label>
+<br>
+
+<a href="#!/getData"><button type="button" class="btn btn-primary" ng-keyup="$event.keyCode == 13 ? postSleepData() : null" ng-click="postSleepData(sleepData)">{{Button}}</button></a>
+
+<!-- THE END OF THE DAYTIME FORM -->
+ </form>
+
+
+
+ <!-- Quick and Dirty inline script -->
+<script type="text/javascript">
+
+      var select = '';
+    for (i=1; i<=100; i++){
+        select += '<option val=' + i + '>' + i + '</option>';
+    }
+    $('.some_selector').html(select);
+
+
+
+
+
+$(document).ready(function() {
+    var date = new Date();
+
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    var today = year + "-" + month + "-" + day;
+    $("#theDate").attr("value", today);
+});
+
+
+
+
+
+
+
+
+
+  </script>

@@ -1,0 +1,167 @@
+<!-- PARTIAL -->
+<h2 class=" text-center bg-warning">Evening</h2>
+
+
+<!-- MAIN INPUT FORM EVENING-->
+ <form class="form-group">
+
+     <!-- Date -->
+    <label> Date:
+    <input class="bg-info form-control" id="theDate" data-toggle="dropdown" type="date" name="day" ng-model="sleepData.date">
+    </label>
+    <br>
+
+    <!-- For fun -->
+    <img class="rounded-corners-2" src="http://i1.kym-cdn.com/photos/images/original/001/221/588/f9e.gif">
+    <br>
+
+    <!-- I consumed caffeinated drinks in the-->
+    <label>I consumed caffeinated drinks in the:
+    <label>Morning
+      <select class='dropdown' ng-model=sleepData.caffeineMorning>
+      </select>​
+    <label>Afternoon
+      <select class='dropdown' ng-model=sleepData.caffeineAfternoon>
+      </select>​
+    </label>​
+      <label>Evening
+      <select class='dropdown' ng-model=sleepData.caffeineEvening>
+      </select>​
+    </label>​
+    </label>
+
+    <!-- Exercised at least 20 minutes -->
+    <br>
+    <label> I exercised at least 20 minutes in the:
+    </label>
+    <label>Morning
+      <select ng-model=sleepData.exerciseMorning>
+       <option>Yes</option>
+        <option>No</option>
+      </select>​
+    <label>Afternoon
+      <select ng-model=sleepData.exerciseAfternoon>
+       <option>Yes</option>
+        <option>No</option>
+      </select>​
+    </label>​
+      <label>Evening
+      <select ng-model=sleepData.exerciseEvening>
+        <option>Yes</option>
+        <option>No</option>
+      </select>​
+    </label>​
+    <br>
+
+    <!-- Medications I took today -->
+    <label> Medications I took today
+    <textarea ng-model=sleepData.medicationsToday>
+    </textarea>
+    <br>
+
+    <!-- Took a nap? -->
+    <label>Took a nap?
+      <select ng-model=sleepData.tookAnap>
+        <option>Yes</option>
+        <option>No</option>
+      </select>​
+      If, yes for how long?
+      <select class="dropdown" step="0.25"></select>
+    </label>
+    <br>
+
+    <label>During the day, how likely was I to dose off while performing daily activities
+
+      <select ng-model=sleepData.doseOff>
+        <option value="no-chance">
+          No chance
+        </option>
+        <option value="slight-chance">
+          Slight chance
+        </option>
+        <option value="moderate-chance">
+          Moderate chance
+        </option>
+        <option value="high-chance">
+          High chance
+        </option>
+
+      </select>
+    </label>
+      <br>
+
+
+    <span class="label label-default">When I woke up for the day, I felt:
+
+        <select class="form-control" ng-model=sleepData.subjectiveMoodRating>
+            <option value="very-pleasant">Very Pleasant</option>
+            <option value="pleasant">Pleasant</option>
+            <option value="unpleasant">Unpleasant</option><option value="very-unpleasant"> Very Unpleasant</option>
+        </select>
+    </span>
+    <br>
+
+    <label> Aproximately 2-3 hours before bed, I consumed:
+    <br>
+    <br>
+
+      <label> Alcohol<input type="checkbox" name="alcohol" value="true" ng-model=sleepData.consumedBeforeBed.alcohol> </label><br>
+
+    <label> A heavy meal <input type="checkbox" name="heavyMeal" value="true" ng-model=sleepData.consumedBeforBed.heavyMeal> </label><br>
+
+      <label> Caffeine <input type="checkbox" name="caffeine" value="true" ng-model=sleepData.consumedBeforeBed.caffeine>  </label><br>
+
+      <label> Not applicable <input type="checkbox" name="notApplicable" value="true" ng-model=sleepData.consumedBeforeBed.notApplicable> </label><br>
+
+    </label>
+
+
+    <label>
+        In the hour before going to sleep, my bedtime routine included: <br> <br>
+        List activities including reading a book, using electronics taking a bath doing relaxation exercies, etc. <br>
+        <br>
+        <textarea ng-model=sleepData.bedtimeRoutine></textarea>
+      </label>
+    <br>
+
+    <a href = "#!/getData"> <button type="button" class="btn btn-primary" ng-keyup="$event.keyCode == 13 ? postSleepData() : null"
+
+    ng-click="postSleepData(sleepData)">{{Button}}</button> </a>
+
+<!-- THE END OF THE DAYTIME FORM -->
+ </form>
+
+ <!-- Quick and Dirty inline script -->
+
+
+  <script type="text/javascript">
+
+      var select = '';
+    for (i=1; i<=100; i++){
+        select += '<option val=' + i + '>' + i + '</option>';
+    }
+    $('.dropdown').html(select);
+
+
+
+$(document).ready(function() {
+    var date = new Date();
+
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    var today = year + "-" + month + "-" + day;
+    $("#theDate").attr("value", today);
+});
+
+
+
+
+
+
+
+  </script>

@@ -1,0 +1,43 @@
+<h1> DATA!</h1>
+
+<div ng-repeat="data in sleepData" ng-show="data.TOD === 'morning'">
+
+<h2>Morning:</h2>
+
+  <h5>Date:{{data.date}}</h5>
+  <h5>Bedtime:{{data.bedtime}}</h5>
+  <h5>Waketime: {{data.waketime}}</h5>
+  <h5>Ease of Sleep:{{data.easeOfSleep}}</h5>
+  <h5>Times Awoken:{{data.timesAwoken}}</h5>
+  <h5>Minutes Awake:{{data.minutesAwake}}</h5>
+  <h5>Total Sleep Hours:{{data.totalSleepHours}}</h5>
+  <h5>Factors Distrubing Sleep:{{data.disturbedNotes}}</h5>
+  <h5>Subjective Waking Data:{{data.subjectiveRatingWaking}}</h5>
+  <h5>Notes: {{data.notes}}</h5>
+
+   <a href="/#!/getData"><button type="button" class="btn btn-primary" ng-click="deleteSleepData(data.id)">Delete</button></a>
+  <a type="button" class="btn btn-primary" ng-href="#!/sleepDataItem/morning/{{data.id}}/edit">Edit</a>
+<hr>
+</div>
+
+<div ng-repeat="data in sleepData" ng-show="data.TOD === 'evening'">
+<h2>Evening:</h2>
+
+  <h5>Date:{{data.date}}</h5>
+  <h5>Caffeine Beverages Morning:{{data.caffeineMorning}}</h5>
+  <h5>Caffeine Beverages Afternoon:{{data.caffeineAfternoon}}</h5>
+  <h5>Caffeine BeveragesEvening:{{data.caffeineEvening}}</h5>
+  <h5>Exercise Morning:{{data.exerciseMorning}}</h5>
+  <h5>Exercise Afternoon:{{data.exerciseAfternoong}}</h5>
+  <h5>Exercise Evening:{{data.exerciseEvening}}</h5>
+  <h5>Medications Taken Today:{{data.medicationsToday}}</h5>
+  <h5>Took a nap:{{data.tookAnap}}</h5>
+  <h5>Likelihood of Dosing:{{data.doseOff}}</h5>
+  <h5>Subjective Mood Rating:{{data.subjectiveMoodRating}}</h5>
+  <h5>Consumed Before Bed:{{data.consumedBeforeBed}}</h5>
+
+  <a href="/#!/getData"><button type="button" class="btn btn-primary" ng-click="deleteSleepData(data.id)">Delete</button></a>
+
+  <a type="button" class="btn btn-primary" ng-href="#!/sleepDataItem/evening/{{data.id}}/edit">Edit</a>
+<hr>
+</div>

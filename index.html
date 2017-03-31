@@ -1,0 +1,61 @@
+<!-- SLEEP DIARY -->
+<!-- SUBJECTIVE DATA -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sleep Diary Tracker</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<link rel="icon" type="image/png" href="~/Users/harryepstein/Downloads/favicon.ico">
+
+</head>
+<body ng-app="SleepDataTracker" ng-controller="EveningDiaryCtrl">
+<h1 class="jumbotron text-center text-capitalize">Sleep Diary Tracker</h1>
+
+  <div ng-include="'partials/navbar.html'">
+
+  </div>
+
+<div ng-view>
+
+
+</div>
+
+
+<!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+
+<!-- app specific files -->
+  <script type="/lib/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="/lib/node_modules/angular/angular.min.js"></script>
+  <script src="/lib/node_modules/angular-route/angular-route.min.js"></script>
+
+  <script type="text/javascript" src=/lib/node_modules/firebase/firebase.js></script>
+  <script src="app/app.js"></script>
+  <script type="text/javascript" src=app/values/fb-creds.js></script>
+  <!-- factories -->
+  <script src="app/factories/SleepDataFactory.js"></script>
+
+  <script src="./app/factories/AuthFactory.js"></script>
+  <!-- controllers -->
+  <script src="app/controllers/EveningDiaryCtrl.js"></script>
+  <script src="app/controllers/MorningDiaryCtrl.js"></script>
+  <script src="app/controllers/retrieveDataCtrl.js"></script>
+  <script src="app/controllers/LandingPagesCtrl.js"></script>
+  <script src="app/controllers/editEveningCtrl.js"></script>
+  <script src="app/controllers/editMorningCtrl.js"></script>
+    <script type="text/javascript" src="app/controllers/UserCtrl.js"></script>
+
+
+
+</body>
+</html>
