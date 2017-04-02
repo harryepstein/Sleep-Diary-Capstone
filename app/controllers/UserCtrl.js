@@ -37,10 +37,11 @@ app.controller("UserCtrl", function($scope, $window, AuthFactory, $location){
 	    })//after the promise is fulfuiled,
 	    .then( (userData) => {
 	      console.log("UserCtrl newUser:", userData );
-	      $scope.login();
+	      $scope.isLoggedIn = true;
+        $scope.login();
 
         // hide the login after registration, as registration counts as a login
-        $scope.isLoggedIn = true;
+
 
 	    }, (error) => {
 	        console.log("Error creating user:", error);
@@ -52,6 +53,7 @@ app.controller("UserCtrl", function($scope, $window, AuthFactory, $location){
     	AuthFactory
 	    .loginUser($scope.account)
 	    .then( () => {
+
 	        $scope.isLoggedIn = true;
 
 	        console.log("UserCtrl: user is loggedIn");
@@ -66,9 +68,11 @@ app.controller("UserCtrl", function($scope, $window, AuthFactory, $location){
 		console.log("you clicked login with Google");
 		AuthFactory.authWithProvider()
 		.then(function(result) {
-	    	var user = result.user.uid;
+      $scope.isLoggedIn = true;
+        var user = result.user.uid;
 	    	console.log("logged in user:", user);
-        $scope.isLoggedIn = true;
+
+
 	    	//Once logged in, go to another view
 
 	    	$location.path("landingPage");

@@ -5,6 +5,12 @@
 <!-- MAIN INPUT FORM MORNING-->
  <form class="form">
 
+<!-- USERNAME -->
+  <label>User Name:
+    <input type="text" name="userName" ng-model="sleepData.userName">
+    </label>
+    <br>
+
   <!-- Date -->
     <label> Date:
     <input class="bg-info form-control" id="theDate" data-toggle="dropdown" type="date" name="day" ng-model="sleepData.date">
@@ -75,7 +81,7 @@
   </label>
 <br>
 
-<a href="#!/getData"><button type="button" class="btn btn-primary" ng-keyup="$event.keyCode == 13 ? postSleepData() : null" ng-click="postSleepData(sleepData)">{{Button}}</button></a>
+<a href="#!/getData"><button type="button" class="btn btn-primary"  ng-click="postSleepData(sleepData)">{{Button}}</button></a>
 
 <!-- THE END OF THE DAYTIME FORM -->
  </form>
