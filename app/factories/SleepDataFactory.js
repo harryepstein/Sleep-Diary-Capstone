@@ -2,8 +2,6 @@
 app.factory('SleepDataFactory', function ($q, $http, FBCreds) {
 
 
-
-
 let getSleepData = () => {
   let sleepData = [];
 return $q((resolve, reject) => {
@@ -32,7 +30,6 @@ console.log(sleepData);
 });
 });
 };
-
 
 
 let getOneSleepData = function (sleepObjectId) {

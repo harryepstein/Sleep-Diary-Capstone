@@ -1,7 +1,29 @@
-/*#bs-example-navbar-collapse-1
+/*.bg-info {
+background-color: #68FE3D;
+}*/
 
-{
-    height: 200px;
-    width: 200px;
+body {
+  font-size: .89em;
+  font-family: 'Press Start 2P', cursive;
+  background-image: url("img/Rainbow-Tile.jpeg");
+  background-size: cover;
+
 }
-*/
+.card {
+  border: 3px solid black;
+}
+div.ng-scope {
+  display: block;
+}
+.jumbotron {
+  background-color:#2196f3;
+  font-family:'Press Start 2P', cursive;
+
+}
+nav.navbar.navbar-light.bg-info.text-center.ng-scope {
+  background-color: #ef5350;
+}
+
+h1.text-center.ng-scope {
+/*  font-family: 'Monoton', cursive;
+*/}
