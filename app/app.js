@@ -1,9 +1,10 @@
 "use strict";
 
-var app = angular.module("SleepDataTracker", ["ngRoute"]);
+var app = angular.module("SleepDataTracker", ["ngRoute", "720kb.datepicker"]);
 
 app.config( function($routeProvider) {
   $routeProvider
+
   // START AT THE LANDING PAGE
   .when('/', {
     templateUrl: './partials/landingPage.html',
@@ -52,7 +53,9 @@ app.config( function($routeProvider) {
 
 
 
-
+/************************************************************
+DO STUFF WHEN IT LOADS; INITIALIZE FIREBASE WITH CREDENTIALS
+*************************************************************/
 
 app.run(($location, FBCreds) => {
     let creds = FBCreds;

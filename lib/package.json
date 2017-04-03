@@ -4,6 +4,7 @@
   "devDependencies": {
     "angular": "^1.6.2",
     "angular-route": "^1.6.2",
+    "angularjs-datepicker": "^2.1.15",
     "bootstrap": "^3.3.7",
     "firebase": "^3.6.10",
     "grunt": "^0.4.5",
@@ -24,7 +25,5 @@
   "main": "Gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }

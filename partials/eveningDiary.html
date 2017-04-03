@@ -17,6 +17,15 @@
     </label>
     <br>
 
+    <!--THE ANGULAR DATEPICKER DIRECTIVE THING: JUST A TRIAL -->
+    <label>Date
+    <datepicker>
+      <input class="bg-info form-control" id="theDate" data-toggle="dropdown" type="date" name="day" ng-model="sleepData.date">
+    </datepicker>
+    </label>
+    <br>
+
+
     <!-- For fun -->
     <img class="rounded-corners-2" src="http://i1.kym-cdn.com/photos/images/original/001/221/588/f9e.gif">
     <br>
@@ -130,9 +139,9 @@
       </label>
     <br>
 
-    <a href = "#!/getData"> <button type="button" class="btn btn-primary" ng-keyup="$event.keyCode == 13 ? postSleepData() : null"
+    <button type="button" class="btn btn-primary" ng-keyup="$event.keyCode == 13 ? postSleepData() : null"
 
-    ng-click="postSleepData(sleepData)">{{Button}}</button> </a>
+    ng-click="postSleepData(sleepData)">{{Button}}</button>
 
 <!-- THE END OF THE DAYTIME FORM -->
  </form>

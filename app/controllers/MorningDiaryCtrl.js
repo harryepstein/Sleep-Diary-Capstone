@@ -1,6 +1,16 @@
 "use strict";
 app.controller('MorningDiaryCtrl', function ($scope, SleepDataFactory, $location) {
 
+
+// $scope.randomColor = function(){
+
+
+
+//     return
+// }
+
+//When creating an entry, change the button to Save. As opposed to the edit controller, as it would in edit.
+
 $scope.Button = "Save";
 
 
